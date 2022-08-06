@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  width: 100%;
+  height: 100vh;
+}
+#root .container {
+  width: 80%;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 55px;
+}
+.card {
+  width: 300px;
+  height: 250px;
+  background-color: #ccc;
+  text-align: center;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 300px;
+  height: 200px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#clothes__boxes {
+  width: 100%;
+  height: 100vh;
+  transform: translateX(-100%);
+
+  transition: all ease-in-out 1s;
+  /* display: none; */
+}
+#clothes__boxes.active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #fff;
+  transform: translate(0);
+}
+#clothes__boxes .boxes {
+  width: 80%;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 55px;
+}
+#clothes__boxes i {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.box {
+  width: 300px;
+  height: 250px;
+  background-color: #ccc;
+  text-align: center;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.box img {
+  width: 300px;
+  height: 200px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
