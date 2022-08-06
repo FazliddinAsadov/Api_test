@@ -22,6 +22,7 @@ const backBtn = document.querySelector(".back");
 
 const cardItems = [];
 let productsData = [];
+let index = "";
 
 const kutibChiqar = async function () {
   try {
@@ -33,7 +34,7 @@ const kutibChiqar = async function () {
     let html = "";
     data.forEach((el) => {
       html += `
-    <div class="card" id="">
+    <div class="card" >
       <img src="${el.image}" alt="">
       <h2>${el.name}</h2>
     </div>
@@ -42,12 +43,11 @@ const kutibChiqar = async function () {
     cardGroup.innerHTML = html;
     const cardes = document.querySelectorAll(".card");
     console.log(cardes);
-    cardes.forEach((card) => {
+
+    cardes.forEach((card, idx) => {
       card.addEventListener("click", () => {
-        console.dir(card);
-        console.dir(card.attributes);
-        cardItems.push(card.attributes.id);
-        console.log(cardItems);
+        console.log(idx);
+        index = idx+1;
         boxItem.classList.add("active");
         clothes();
       });
@@ -61,7 +61,7 @@ kutibChiqar();
 async function clothes() {
   try {
     const res = await fetch(
-      "https://api.escuelajs.co/api/v1/categories/2/products"
+      `https://api.escuelajs.co/api/v1/categories/${index}/products`
     );
     const cothesData = await res.json();
     console.log(cothesData);
